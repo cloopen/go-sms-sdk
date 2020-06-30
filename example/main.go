@@ -1,8 +1,9 @@
 package main
 
 import (
-	"cloopen"
 	"log"
+
+	"github.com/cloopen/go-sms-sdk/cloopen"
 )
 
 func main() {

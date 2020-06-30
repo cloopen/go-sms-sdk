@@ -12,35 +12,35 @@ go get -u github.com/cloopen/go-sms-sdk/cloopen
 package main
 
 import (
-	"github.com/cloopen/go-sms-sdk/cloopen"
-	"log"
+ "github.com/cloopen/go-sms-sdk/cloopen"
+ "log"
 )
 
 func main() {
-	cfg := cloopen.DefaultConfig().
-		// 开发者主账号
-		WithAPIAccount("xxxxxxxxxxxxx").
-		// 主账号令牌 TOKEN
-		WithAPIToken("xxxxxxxxxxxxx")
-	sms := cloopen.NewJsonClient(cfg).SMS()
-  // 下发包体参数
-	input := &cloopen.SendRequest{
-		// 应用的APPID
-		AppId: "xxxxxxxxxxxxx",
-		// 手机号码
-		To: "18601312882",
-		// 模版ID
-		TemplateId: "8696",
-		// 模版变量内容 非必填
-		Datas: []string{"您的验证码是4059"},
-	}
-  // 下发
-	resp, err := sms.Send(input)
-	if err != nil {
-		log.Fatal(err)
-		return
-	}
-	log.Printf("Response MsgId: %s \n", resp.TemplateSMS.SmsMessageSid)
+ cfg := cloopen.DefaultConfig().
+  // 开发者主账号
+  WithAPIAccount("xxxxxxxxxxxxx").
+  // 主账号令牌 TOKEN
+  WithAPIToken("xxxxxxxxxxxxx")
+ sms := cloopen.NewJsonClient(cfg).SMS()
+ // 下发包体参数
+ input := &cloopen.SendRequest{
+  // 应用的APPID
+  AppId: "xxxxxxxxxxxxx",
+  // 手机号码
+  To: "18601312882",
+  // 模版ID
+  TemplateId: "8696",
+  // 模版变量内容 非必填
+  Datas: []string{"您的验证码是4059"},
+ }
+   // 下发
+ resp, err := sms.Send(input)
+ if err != nil {
+  log.Fatal(err)
+  return
+ }
+ log.Printf("Response MsgId: %s \n", resp.TemplateSMS.SmsMessageSid)
 
 }
 
@@ -67,12 +67,12 @@ func main() {
   ```go
   // 时间单位为毫秒
   &HttpConf{
-  			Timeout:             300,
-  			KeepAlive:           30000,
-  			MaxIdleConns:        100,
-  			IdleConnTimeout:     30000,
-  			TLSHandshakeTimeout: 300,
-  		}
+     Timeout:             300,
+     KeepAlive:           30000,
+     MaxIdleConns:        100,
+     IdleConnTimeout:     30000,
+     TLSHandshakeTimeout: 300,
+    }
   ```
 
 * 方法调用
