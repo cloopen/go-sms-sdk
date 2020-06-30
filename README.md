@@ -34,7 +34,7 @@ func main() {
   // 模版变量内容 非必填
   Datas: []string{"您的验证码是4059"},
  }
-   // 下发
+ // 下发
  resp, err := sms.Send(input)
  if err != nil {
   log.Fatal(err)
@@ -72,7 +72,7 @@ func main() {
      MaxIdleConns:        100,
      IdleConnTimeout:     30000,
      TLSHandshakeTimeout: 300,
-    }
+  }
   ```
 
 * 方法调用
