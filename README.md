@@ -28,11 +28,11 @@ func main() {
   // 应用的APPID
   AppId: "xxxxxxxxxxxxx",
   // 手机号码
-  To: "18601312882",
+  To: "1352*******",
   // 模版ID
-  TemplateId: "8696",
+  TemplateId: "xxxx",
   // 模版变量内容 非必填
-  Datas: []string{"您的验证码是4059"},
+  Datas: []string{"变量1","变量2","变量3"},
  }
  // 下发
  resp, err := sms.Send(input)
