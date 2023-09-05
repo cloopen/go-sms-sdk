@@ -9,11 +9,15 @@ import (
 	"time"
 )
 
+type ISMS interface {
+	Send(input *SendRequest) (*SendResponse, error)
+}
+
 type SMS struct {
 	c *Client
 }
 
-func (c *Client) SMS() *SMS {
+func (c *Client) SMS() ISMS {
 	return &SMS{c}
 }
 
