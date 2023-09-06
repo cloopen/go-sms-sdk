@@ -11,16 +11,20 @@ import (
 	"net/url"
 )
 
+type IClient interface {
+	SMS() ISMS
+}
+
 type Client struct {
 	config *Config
 }
 
-func NewJsonClient(config *Config) *Client {
+func NewJsonClient(config *Config) IClient {
 	config.withContentType(CONTENT_JSON)
 	return &Client{config}
 }
 
-func NewXmlClient(config *Config) *Client {
+func NewXmlClient(config *Config) IClient {
 	config.withContentType(CONTENT_XML)
 	return &Client{config}
 }
